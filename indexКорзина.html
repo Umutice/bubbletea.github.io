@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Корзина | SneakPeak</title>
+  <link rel="stylesheet" href="styleКорзина.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <a href="index.html" class="nav-btn">Главная</a>
+      <a href="indexО НАС.html" class="nav-btn">О нас</a>
+      <a href="indexКонтакты.html" class="nav-btn">Контакты</a>
+      <a href="indexРегистрация.html" class="nav-btn">Регистрация</a>
+      <a href="indexКорзина.html" class="nav-btn">Корзина</a>
+    </nav>
+  </header>
+
+  <h1>Корзина</h1>
+
+  <div id="cart-items"></div>
+
+  <h2 id="total-price">Итого: 0 $</h2>
+
+  <section class="checkout-form">
+    <h3>Оформление заказа</h3>
+    <form>
+      <input type="text" placeholder="Имя и фамилия" required>
+      <input type="text" placeholder="Адрес доставки" required>
+      <input type="email" placeholder="Email" required>
+
+      <h4>Оплата</h4>
+      <input type="text" placeholder="Номер карты (16 цифр)" required maxlength="16">
+      <div class="card-info">
+        <input type="text" placeholder="MM/YY" required maxlength="5">
+        <input type="text" placeholder="CVV" required maxlength="3">
+      </div>
+
+      <button type="submit">Оформить заказ</button>
+    </form>
+  </section>
+
+  <script>
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const container = document.getElementById('cart-items');
+    const totalEl = document.getElementById('total-price');
+
+    // Функция для обновления общей суммы
+    function updateTotal() {
+      let total = 0;
+      cart.forEach(item => {
+        total += Number(item.price);
+      });
+      totalEl.innerHTML = `Итого: ${total} $`;  // Обновляем сумму в DOM
+    }
+
+    // Рендерим товары и обновляем общую сумму
+    if (cart.length === 0) {
+      container.innerHTML = '<p>Корзина пуста</p>';
+      totalEl.style.display = 'none';
+    } else {
+      cart.forEach((item, index) => {
+        const div = document.createElement('div');
+        div.innerHTML = `
+          <img src="${item.img}" width="100">
+          <h3>${item.name}</h3>
+          <p>${item.price} $</p>
+          <button onclick="removeFromCart(${index})">Удалить</button>
+        `;
+        container.appendChild(div);
+      });
+
+      // Обновляем сумму после отображения товаров
+      updateTotal();
+    }
+
+    // Удаление товара из корзины и обновление суммы
+    function removeFromCart(index) {
+      cart.splice(index, 1); // Удаляем товар из корзины
+      localStorage.setItem('cart', JSON.stringify(cart)); // Сохраняем обновленную корзину в localStorage
+      container.innerHTML = ''; // Очищаем контейнер с товарами
+      cart.forEach((item, index) => {
+        const div = document.createElement('div');
+        div.innerHTML = `
+          <img src="${item.img}" width="100">
+          <h3>${item.name}</h3>
+          <p>${item.price} $</p>
+          <button onclick="removeFromCart(${index})">Удалить</button>
+        `;
+        container.appendChild(div);
+      });
+
+      // Обновляем общую сумму после удаления товара
+      updateTotal();
+    }
+  </script>
+
+</body>
+</html>

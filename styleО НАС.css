@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #480000; /* тёмный фон */
+  color: #ffffff;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 900px;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: #5c0000; /* темный блок */
+  border-left: 6px solid #8b0000; /* тёмно-красный акцент */
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgb(11, 0, 0);
+  animation: fadeIn 1s ease;
+}
+
+.container h1 {
+  color: #c1c1c1; /* яркий тёмно-красный */
+  font-size: 36px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #8b0000;
+  padding-bottom: 10px;
+}
+
+.container p {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.footer{
+  margin: 0;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* Плавная анимация появления */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}

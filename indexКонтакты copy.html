@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Контакты | SneakPeak</title>
+  <style>
+    /* === СТИЛЬ ДЛЯ КНОПОК === */
+    .nav-bar {
+      text-align: center;
+      padding: 20px 0;
+      background-color: #620000;
+    }
+
+    .nav-btn {
+      display: inline-block;
+      text-decoration: none;
+      padding: 12px 24px;
+      margin: 0 10px;
+      background-color: #8b0000;
+      color: white;
+      font-weight: bold;
+      border-radius: 30px;
+      box-shadow: 0 4px 12px rgba(139, 0, 0, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .nav-btn:hover {
+      background-color: #a80000;
+      transform: scale(1.07);
+      box-shadow: 0 6px 16px rgba(255, 0, 0, 0.5);
+    }
+
+    .nav-btn.active {
+      border-bottom: 3px solid white;
+    }
+  </style>
+  <link rel="stylesheet" href="styleКонтакты.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="indexО НАС.html">О нас</a>
+      <a href="indexКонтакты.html" class="active">Контакты</a>
+      <a href="indexРегистрация.html" class="active">Регистрация</a>
+      <a href="indexКорзина.html" class="active">Корзина</a>
+
+    </nav>
+  </header>
+
+  <section class="contact-section">
+    <div class="container">
+      <h1>Связаться с нами</h1>
+      <p>Если у тебя есть вопросы, предложения или ты хочешь сотрудничать — пиши, мы всегда на связи.</p>
+
+      <div class="contact-info">
+        <p><strong>Email:</strong> support@sneakpeak.ru</p>
+        <p><strong>Телефон:</strong> +996 502 81 81 06</p>
+        <p><strong>Мы в соцсетях:</strong></p>
+      </div>
+
+      <div class="contact-info">
+        <ul>
+          <li><a href="https://vk.com/твой_профиль" target="_blank">VK</a></li>
+          <li><a href="https://t.me/asylbekovd" target="_blank">Telegram</a></li>
+          <li><a href="https://www.instagram.com/meder_bek0v1ch" target="_blank">Instagram</a></li>
+        </ul>
+      </div>
+      
+
+      <form class="contact-form">
+        <input type="text" placeholder="Твоё имя" required>
+        <input type="email" placeholder="Email" required>
+        <textarea placeholder="Твое сообщение..." required></textarea>
+        <button type="submit">Отправить</button>
+      </form>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 SneakPeak. Все права защищены.</p>
+  </footer>
+</body>
+</html>

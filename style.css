@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: #fbe9cd;
+  color: #333;
+}
+
+header {
+  text-align: center;
+  background-color: #8f0000;
+  padding: 50px 20px;
+  color: white;
+}
+.top-nav {
+  background-color: #8f0000; /* тёмно-красный */
+  padding: 10px 20px;
+  text-align: right;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  transition: transform 0.5px ease;
+}
+
+.top-nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 50px;
+  font-weight: bold;
+  transition: color 0.3s;
+  text-align: center;
+}
+
+.top-nav a:hover {
+  color: #8e8e8e; /* светло-розовый при наведении */
+}
+header h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+header p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.brand-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  padding: 50px 40px;
+  max-width: 1000px;
+  margin: auto;
+  
+}
+
+.brand-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 140px;
+  border-radius: 15px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: white;
+  transition: transform 0.3s ease;
+  box-shadow: 5px 10px 15px#00000021;
+}
+
+.brand-card:hover {
+  transform: scale(1.05);
+}
+
+.brand-card.A{
+  background: #780000;
+}
+
+.brand-card.B{
+  background: #f8daa0;
+}
+
+.brand-card.C {
+  background: #003949;
+}
+
+.footer {
+  background-color: #8f0000; /* тот же красный, что и в шапке */
+  color: #fff;
+  text-align: center;
+  padding: 20px 10px;
+  margin-top: 40px;
+  font-size: 14px;
+  border-top: 2px solid #fff;
+}
+
+.footer a {
+  color: #ffe;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
